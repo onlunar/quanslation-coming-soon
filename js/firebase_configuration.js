@@ -43,14 +43,15 @@ function recaptchaCallback(){
         }else{
             $("#notifs-form-btn").text("Notified!");
         }
-        grecaptcha.reset()
+        
     });
 }
 
 $(document).ready(function () {
-
+    
     $('#notifs-form-btn').click(function (e) {
         var is_present = false;
+        grecaptcha.reset()
         email = $('#notifs-form-input').val();
         if (validateEmail(email)) {
             recaptchaEmail = grecaptcha.render('notifs-captcha', {
