@@ -5,12 +5,13 @@ function validateEmail(email) {
 }
 
 var config = {
-    apiKey: "<YOUR FIREBASE API KEY>",
-    authDomain: "<FIREBASE AUTH DOMAIN>",
-    databaseURL: "<DB URL>",
-    projectId: "<PROJECT ID>",
-    storageBucket: "<STRORAGE BUKCET>",
-    messagingSenderId: "<MESSAGE SENDER ID>"
+    apiKey: "AIzaSyAOsxAmHWqZIoLP6pTYP-ATVmivcl9mAJU",
+    authDomain: "quanslation-coming-soon.firebaseapp.com",
+    projectId: "quanslation-coming-soon",
+    storageBucket: "quanslation-coming-soon.appspot.com",
+    messagingSenderId: "882355767915",
+    appId: "1:882355767915:web:975fef7931c9724471bf2e",
+    measurementId: "G-3ELVVVE122"
 };
 firebase.initializeApp(config);
 var db = firebase.firestore();
