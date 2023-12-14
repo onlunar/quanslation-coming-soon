@@ -51,7 +51,7 @@ $(document).ready(function () {
         email = $('#notifs-form-input').val();
         if (validateEmail(email)) {
             recaptchaEmail = grecaptcha.render('notifs-captcha', {
-                'sitekey': '6Lf9EDEpAAAAABUpOB-cg9ciC4UBdiDGkhJSTSe9',
+                'sitekey': '6LdiJTEpAAAAAIyBw7KVmKkEc813TA4RzwEoI7No',
                 'theme': 'dark',
                 'callback': recaptchaCallback,
                 'data-size': 'invisible'
