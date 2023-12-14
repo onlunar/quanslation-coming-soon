@@ -40,6 +40,8 @@ function recaptchaCallback(){
                 .catch(function (error) {
                     console.error("Error adding document: ", error);
                 });
+        }else{
+            $("#notifs-form-btn").text("Notified!");
         }
     });
 }
