@@ -43,6 +43,7 @@ function recaptchaCallback(){
         }else{
             $("#notifs-form-btn").text("Notified!");
         }
+        grecaptcha.reset()
     });
 }
 
