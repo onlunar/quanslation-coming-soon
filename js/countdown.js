@@ -1,8 +1,7 @@
-var countDownDate = new Date();
+var countDownDate = new Date('2024/2/29 00:00:00');
 // Replace with desired date 'January 17, 2019 03:24:00', example
 // countDownDate.setDate('February 29, 2024 00:00:00');
-countDownDate.setDate(countDownDate.getDate() + 30);
-countDownDate.getTime();
+// countDownDate.setDate(countDownDate.getDate());
 
 // Update the count down every 1 second
 var x = setInterval(function () {
@@ -11,7 +10,7 @@ var x = setInterval(function () {
   var now = new Date().getTime();
 
   // Find the distance between now an the count down date
-  var distance = countDownDate - now;
+  var distance = countDownDate.getTime() - now;
 
   // Time calculations for days, hours, minutes and seconds
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
