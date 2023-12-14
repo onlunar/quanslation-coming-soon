@@ -19,14 +19,14 @@ db.settings({
     timestampsInSnapshots: true
 });
 
-var appCheck = firebase.appCheck();
+// var appCheck = firebase.appCheck();
 
-appCheck.activate(
-    '6Lf9EDEpAAAAABUpOB-cg9ciC4UBdiDGkhJSTSe9',
+// appCheck.activate(
+//     '6Lf9EDEpAAAAABUpOB-cg9ciC4UBdiDGkhJSTSe9',
   
-    // Optional argument. If true, the SDK automatically refreshes App Check
-    // tokens as needed.
-    true);
+//     // Optional argument. If true, the SDK automatically refreshes App Check
+//     // tokens as needed.
+//     true);
 $(document).ready(function () {
 
     $('#notifs-form-btn').click(function (e) {
