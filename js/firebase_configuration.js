@@ -19,9 +19,9 @@ db.settings({
     timestampsInSnapshots: true
 });
 
-var recaptchaEmail;
+var recaptchaEmail = null;
 
-function recaptchaCallback(){
+function recaptchaCallback() {
     db.collection('Emails').get().then(function (qs) {
         qs.forEach(function (element) {
             if (element.data()['ID'] == email) {
@@ -40,18 +40,18 @@ function recaptchaCallback(){
                 .catch(function (error) {
                     console.error("Error adding document: ", error);
                 });
-        }else{
+        } else {
             $("#notifs-form-btn").text("Notified!");
         }
-        
+
     });
 }
 
 $(document).ready(function () {
-    
+
     $('#notifs-form-btn').click(function (e) {
         var is_present = false;
-        grecaptcha.reset()
+        if (recaptchaEmail) grecaptcha.reset();
         email = $('#notifs-form-input').val();
         if (validateEmail(email)) {
             recaptchaEmail = grecaptcha.render('notifs-captcha', {
