@@ -51,7 +51,7 @@ $(document).ready(function () {
 
     $('#notifs-form-btn').click(function (e) {
         var is_present = false;
-        if (recaptchaEmail) grecaptcha.reset();
+        if (recaptchaEmail === 0) grecaptcha.reset();
         email = $('#notifs-form-input').val();
         if (validateEmail(email)) {
             recaptchaEmail = grecaptcha.render('notifs-captcha', {
