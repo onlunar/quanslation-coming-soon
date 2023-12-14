@@ -50,7 +50,7 @@ $(document).ready(function () {
         var is_present = false;
         email = $('#notifs-form-input').val();
         if (validateEmail(email)) {
-            recaptchaEmail = grecaptcha.render('notifs-form-btn', {
+            recaptchaEmail = grecaptcha.render('notifs-form', {
                 'sitekey': '6Lf9EDEpAAAAABUpOB-cg9ciC4UBdiDGkhJSTSe9',
                 'theme': 'dark',
                 'callback': recaptchaCallback,
