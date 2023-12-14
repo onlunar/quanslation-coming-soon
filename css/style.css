@@ -29,7 +29,7 @@ i {
   color: black;
 }
 
-a > i.social-icon:hover {
+a>i.social-icon:hover {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
 }
 
@@ -43,4 +43,10 @@ input:-webkit-autofill:active {
 #notifs-forn-input,
 #notifs-form-input:focus {
   border: solid 2px #ccc;
+}
+
+#notifs-captcha {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
