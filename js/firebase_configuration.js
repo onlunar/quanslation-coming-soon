@@ -54,7 +54,6 @@ $(document).ready(function () {
                 'sitekey': '6LdiJTEpAAAAAIyBw7KVmKkEc813TA4RzwEoI7No',
                 'theme': 'dark',
                 'callback': recaptchaCallback,
-                'data-size': 'invisible'
             });
 
         }
