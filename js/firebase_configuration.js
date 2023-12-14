@@ -19,39 +19,41 @@ db.settings({
     timestampsInSnapshots: true
 });
 
-// var appCheck = firebase.appCheck();
+var recaptchaEmail;
 
-// appCheck.activate(
-//     '6Lf9EDEpAAAAABUpOB-cg9ciC4UBdiDGkhJSTSe9',
-  
-//     // Optional argument. If true, the SDK automatically refreshes App Check
-//     // tokens as needed.
-//     true);
+function recaptchaCallback(){
+    db.collection('Emails').get().then(function (qs) {
+        qs.forEach(function (element) {
+            if (element.data()['ID'] == email) {
+                is_present = true;
+            }
+        });
+
+        if (is_present == false) {
+            db.collection("Emails").add({
+                'ID': email,
+            })
+                .then(function (docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                    $("#notifs-form-btn").text("Notified!");
+                })
+                .catch(function (error) {
+                    console.error("Error adding document: ", error);
+                });
+        }
+    });
+}
+
 $(document).ready(function () {
 
     $('#notifs-form-btn').click(function (e) {
         var is_present = false;
         email = $('#notifs-form-input').val();
         if (validateEmail(email)) {
-            db.collection('Emails').get().then(function (qs) {
-                qs.forEach(function (element) {
-                    if (element.data()['ID'] == email) {
-                        is_present = true;
-                    }
-                });
-
-                if (is_present == false) {
-                    db.collection("Emails").add({
-                        'ID': email,
-                    })
-                        .then(function (docRef) {
-                            console.log("Document written with ID: ", docRef.id);
-                            $("#notifs-form-btn").text("Notified!");
-                        })
-                        .catch(function (error) {
-                            console.error("Error adding document: ", error);
-                        });
-                }
+            recaptchaEmail = grecaptcha.render('notifs-form-btn', {
+                'sitekey': '6Lf9EDEpAAAAABUpOB-cg9ciC4UBdiDGkhJSTSe9',
+                'theme': 'dark',
+                'callback': recaptchaCallback,
             });
 
         }
